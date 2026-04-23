@@ -3,6 +3,8 @@
 \title{随机微分方程在求解微分方程中的应用}
 
 \author{张家玮}
+
+
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -10,12 +12,36 @@
 \usepackage{subcaption}
 \usepackage{caption}
 \usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+\usepackage{xcolor}
+
 
 % 定义 QED 符号（空心方框，右对齐）
+\newtheorem{theorem}{定理}[section]
+\newtheorem{lemma}[theorem]{引理}
+\newtheorem{corollary}[theorem]{推论}
+\newtheorem{definition}[theorem]{定义}
+\newtheorem{example}[theorem]{例}
+\newtheorem{remark}[theorem]{注}
+\newtheorem{axiom}[theorem]{公理}
+\newtheorem{proposition}[theorem]{命题}
+\newtheorem{proofpart}{证明}
+\renewcommand{\proofname}{\textbf{证明}}
+\renewcommand{\figurename}{\textbf{图}}
+\renewcommand{\tablename}{\textbf{表}}
+
+\numberwithin{equation}{section}
 \newcommand{\qed}{\hfill \ensuremath{\square}}
-\renewcommand{\figurename}{图}
-\renewcommand{\tablename}{表}
-\renewcommand{\abstractname}{\large 摘要}
+%\renewcommand{\figurename}{图}
+%\renewcommand{\tablename}{表}
+%\renewcommand{\abstractname}{\large 摘要}
+
+
+\usepackage[left]{showlabels}
+\allowdisplaybreaks[3]
+\definecolor{sysugreen}{RGB}{0,86,31}
+\definecolor{sysured}{RGB}{116,0,3}
+\definecolor{sysugold}{RGB}{210,152,101}
+\newcommand{\XW}[1]{\textcolor{sysugreen}{{#1}}}
 
 
 \begin{document}
@@ -24,11 +50,16 @@
 \begin{abstract}
 \normalsize
 随机微分方程（SDE）为求解确定性偏微分方程（PDE）提供了一种概率表示方法，将PDE的解析求解转化为随机路径模拟与统计估计问题。本文首先系统介绍了随机过程、布朗运动、伊藤积分、伊藤公式等预备知识，阐述了SDE解的存在唯一性、伊藤扩散的无穷小生成元以及Dynkin公式等核心理论。随后，通过Feynman-Kac公式建立了SDE与PDE之间的桥梁，并基于Euler-Maruyama时间离散化结合Monte Carlo模拟，提出了一种高效的数值求解框架。文中分别对经典Dirichlet问题、热方程以及金融领域的Black-Scholes方程进行了数值实验验证。结果表明：SDE-Monte Carlo方法在单位圆、正方形、三角形等区域的Dirichlet问题以及热方程求解中，平均绝对误差均能够随着Monte Carlo模拟路径数的增加而以$\frac{1}{2}$阶的速度降低，与理论收敛速率高度吻合；在Black-Scholes期权定价中，该方法同样能有效得到风险中性价格。数值结果证实了该方法在高维问题、复杂边界条件下具有良好的可扩展性与数值稳定性，为工程、物理、金融等领域带噪系统的PDE求解提供了实用工具。
+\end{abstract}
+
+\bigskip
 
 \noindent\textbf{关键词：SDE，PDE，Feynman-Kac公式，EM方法，Monte Carlo估计，Black-Scholes方程}
 
+\newpage
+\tableofcontents
+\newpage
 
-\end{abstract}
 
 \section{绪论}
 \subsection{研究背景与现状}
@@ -55,7 +86,22 @@
 
 \section{预备知识}
 
-	以下为本文所用到的定义与定理，以及相关记号的定义。
+以下为本文所用到的定义与定理，以及相关记号的定义。
+
+\XW{定义、定理等改为如下标准的latex语法格式，这样方便引用，如根据\textbf{定义\ref{def:Lp_space}}。}
+
+\XW{
+\begin{definition}[$L^p(\mathbb{P})$空间]\label{def:Lp_space}
+若$X:\Omega\mapsto\mathbb{R}^n$为一定义在概率空间$(\Omega,\mathcal{F},\mathbb{P})$上的随机变量，$p\in \left [1,\infty \right )$为一常数，定义$X$的$L^p$范数$\left \Vert X \right \Vert_p$如下
+\[
+\left \Vert X \right \Vert_p=\left \Vert X \right \Vert_{L^p(\mathbb{P})}=(\int_{\Omega} \left \vert X(\omega) \right \vert^p \, dP(\omega))^{\frac{1}{p}}
+\]
+对应的$L^p(\mathbb{P})$空间定义为
+\[
+L^p(\mathbb{P})=\left \{ X:\Omega \to \mathbb{R}^n;\left \Vert X \right \Vert_p<\infty \right \}
+\]
+\end{definition}
+}
 
 \vspace{0.3cm}
 \noindent \textbf{定义2.1（$L^p(\mathbb{P})$空间）}

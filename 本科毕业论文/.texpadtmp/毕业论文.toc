@@ -1,0 +1,17 @@
+\contentsline {section}{\numberline {1}绪论}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}研究背景与现状}{3}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}本文的主要工作}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}预备知识}{6}{section.2}%
+\contentsline {section}{\numberline {3}重要定理叙述与数值方法}{15}{section.3}%
+\contentsline {subsection}{\numberline {3.1}重要定理}{15}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}数值方法}{19}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}数值例子}{20}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}经典Dirichlet问题求解}{20}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}热方程求解}{24}{subsubsection.3.3.2}%
+\contentsline {section}{\numberline {4}SDE在求解Black-Scholes方程中的应用}{26}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Black-Scholes方程背景}{26}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}经典PDE解}{29}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}SDE方法求解Black-Scholes方程}{32}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}数值模拟}{33}{subsection.4.4}%
+\contentsline {section}{\numberline {5}总结与展望}{35}{section.5}%
+\contentsline {section}{\numberline {A}附录A}{36}{appendix.A}%
