@@ -1,0 +1,119 @@
+\begin{thebibliography}{18}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}
+  \def\eprint#1#2{#2}
+\else
+  \def\doi#1{\href{https://doi.org/#1}{\nolinkurl{#1}}}
+  \let\eprint\href
+\fi
+
+\bibitem[Bachelier(2006)]{Bachelier2006}
+BACHELIER L.
+\newblock Louis bachelier's theory of speculation: The origins of modern
+  finance\allowbreak[M].
+\newblock Princeton University Press, 2006.
+
+\bibitem[Einstein(1905)]{Einstein1905}
+EINSTEIN A.
+\newblock \"uber die von der molekularkinetischen theorie der w\"arme
+  geforderte bewegung von in ruhenden fl\"ussigkeiten suspendierten
+  teilchen\allowbreak[J].
+\newblock Annalen der Physik, 1905, 322\allowbreak (8): 549-560.
+
+\bibitem[Wiener(1923)]{Wiener1923}
+WIENER N.
+\newblock Differential-space\allowbreak[J].
+\newblock Journal of Mathematics and Physics, 1923, 2: 131-174.
+
+\bibitem[It{\^o}(1944)]{Ito1944}
+IT{\^O} K.
+\newblock Stochastic integral\allowbreak[J].
+\newblock Proceedings of the Imperial Academy, 1944, 20\allowbreak (8):
+  519-524.
+
+\bibitem[Langevin(1908)]{Langevin1908}
+LANGEVIN P.
+\newblock Sur la th{\'e}orie du mouvement brownien\allowbreak[J].
+\newblock Comptes Rendus de l'Acad{\'e}mie des Sciences, 1908, 146: 530-533.
+
+\bibitem[Uhlenbeck et~al.(1930)Uhlenbeck and Ornstein]{Uhlenbeck1930}
+UHLENBECK G~E, ORNSTEIN L~S.
+\newblock On the theory of the brownian motion\allowbreak[J].
+\newblock Physical Review, 1930, 36\allowbreak (5): 823-841.
+
+\bibitem[Samuelson(1965)]{Samuelson1965}
+SAMUELSON P~A.
+\newblock Rational theory of warrant pricing\allowbreak[J].
+\newblock Industrial Management Review, 1965, 6\allowbreak (2): 13-31.
+
+\bibitem[Kolmogorov(1931)]{Kolmogorov1931}
+KOLMOGOROV A~N.
+\newblock \"uber die analytischen methoden in der
+  wahrscheinlichkeitsrechnung\allowbreak[J].
+\newblock Mathematische Annalen, 1931, 104: 415-458.
+
+\bibitem[Feynman(1948)]{Feynman1948}
+FEYNMAN R~P.
+\newblock Space-time approach to non-relativistic quantum
+  mechanics\allowbreak[J].
+\newblock Reviews of Modern Physics, 1948, 20\allowbreak (2): 367-387.
+
+\bibitem[Kac(1949)]{Kac1949}
+KAC M.
+\newblock On distributions of certain wiener functionals\allowbreak[J].
+\newblock Transactions of the American Mathematical Society, 1949,
+  65\allowbreak (1): 1-13.
+
+\bibitem[B.Øksendal(2013)]{SDE_book_BO}
+B.ØKSENDAL.
+\newblock Stochastic differential equations: An introduction with
+  applications\allowbreak[M].
+\newblock 6th ed.
+\newblock Springer, 2013.
+
+\bibitem[Maruyama(1955)]{Maruyama1955}
+MARUYAMA G.
+\newblock Continuous markov processes and stochastic equations\allowbreak[J].
+\newblock Rendiconti del Circolo Matematico di Palermo, 1955, 4: 48-90.
+
+\bibitem[Kloeden et~al.(1992)Kloeden and Platen]{KloedenPlaten1992}
+KLOEDEN P~E, PLATEN E.
+\newblock Numerical solution of stochastic differential
+  equations\allowbreak[M].
+\newblock Springer, 1992.
+
+\bibitem[A.Pavliotis(2014)]{SDE_Numerical_method}
+A.PAVLIOTIS G.
+\newblock Stochastic process and applications: Diffusion processes,the
+  fokker-planck and langevin equations\allowbreak[M].
+\newblock Springer, 2014.
+
+\bibitem[Evans(2010)]{evans2010pde}
+EVANS L~C.
+\newblock Graduate studies in mathematics: Vol.~19\quad partial differential
+  equations\allowbreak[M].
+\newblock 2nd ed.
+\newblock American Mathematical Society, 2010.
+
+\bibitem[Sharpe(1964)]{sharpe1964capm}
+SHARPE W~F.
+\newblock Capital asset prices: A theory of market equilibrium under conditions
+  of risk\allowbreak[J].
+\newblock Journal of Finance, 1964, 19\allowbreak (3): 425-442.
+
+\bibitem[Black et~al.(1973)Black and Scholes]{BlackScholes1973}
+BLACK F, SCHOLES M.
+\newblock The pricing of options and corporate liabilities\allowbreak[J].
+\newblock Journal of Political Economy, 1973.
+
+\bibitem[Hull(2018)]{hull2018}
+HULL J~C.
+\newblock Options, futures, and other derivatives\allowbreak[M].
+\newblock 10th ed.
+\newblock Pearson, 2018.
+
+\end{thebibliography}
