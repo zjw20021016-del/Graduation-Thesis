@@ -16,7 +16,7 @@
   {
     title        = {Feynman-Kac公式：\\偏微分方程的概率数值方法},
     title*       = {Feynman-Kac Formula:\\ Probabilistic Numeric Method\\ for Partial Differential Equations},
-    keywords     = {Feynman-Kac公式, 随机微分方程, 偏微分方程, Euler-Maruyama方法, 蒙特卡洛模拟},
+    keywords     = {Feynman-Kac公式, 随机微分方程, 偏微分方程, Euler-Maruyama方法, Monte Carlo模拟},
     keywords*    = {Feynman-Kac Formula, SDE, PDE,  Euler-Maruyama Method, Monte Carlo},
     student-id   = {20340140},
     author       = {张家玮},
@@ -25,8 +25,8 @@
     department*  = {School of Mathematics},
     major        = {统计学},
     major*       = {Statistics},
-    supervisors  = {王\:\:雄},
-    supervisors* = {Prof.Wong, Xiong},
+    supervisors  = {王\:\:\:\:雄},
+    supervisors* = {Dr. Wang, Xiong},
     date         = {2026/05/10},  % 默认为编译当天
     %secret-level = {公开},  % 仅研究生
     %thesis-code  = {00000000}  % 仅研究生
@@ -64,19 +64,19 @@
 \frontmatter
 
 \begin{abstract}
-  随机微分方程（SDE）为求解确定性偏微分方程（PDE）提供了一种概率表示方法，将PDE的解析求解转化为随机路径模拟与统计估计问题。本文首先系统介绍了随机过程、Brownian运动、It\^o积分、It\^o公式等预备知识，阐述了SDE解的存在唯一性、It\^o扩散的无穷小生成元以及Dynkin公式等核心理论。
+  随机微分方程（SDE）为求解偏微分方程（PDE）提供了一种概率表示方法，将PDE的求解特别是数值求解转化为随机路径模拟与统计平均问题。本文在第2章回顾SDE理论的基础工具，包括Brownian运动、It\^o积分、It\^o公式等预备知识，阐述了SDE解的存在唯一性、It\^o扩散的无穷小生成元以及Dynkin公式等核心理论，为后续建立SDE与PDE的对应关系提供理论准备。
   
-  随后，通过Feynman-Kac公式建立了SDE与PDE之间的桥梁，并基于Euler-Maruyama时间离散化结合Monte Carlo模拟，提出了一种高效的数值求解框架。文中分别对经典Dirichlet问题、热方程以及金融领域的Black-Scholes方程进行了数值实验验证。
+  在此基础上，第3章通过Feynman-Kac公式建立了PDE解的概率表示，并结合Euler-Maruyama格式和Monte Carlo模拟，提出了一种高效的数值求解框架。第3-4章将该框架应用于三类问题：不同区域的Dirichlet问题、热方程的初值问题以及金融领域中重要的欧式期权定价 Black-Scholes 模型进行了数值实验验证。
   
-  结果表明，SDE-Monte Carlo方法在单位圆、正方形、三角形等区域的Dirichlet问题以及热方程求解中，平均绝对误差均能够随着Monte Carlo模拟路径数的增加而以$\mathcal{O}(M^{-1/2})$阶的速度降低，与理论收敛速率高度吻合；在Black-Scholes期权定价中，该方法同样能有效得到风险中性价格。数值结果证实了该方法在高维问题、复杂边界条件下具有良好的可扩展性与数值稳定性，为工程、物理、金融等领域带噪系统的PDE求解提供了实用工具。
+  结果表明，SDE-Monte Carlo方法Dirichlet问题与热方程的平均绝对误差均随Monte Carlo 模拟路径数$M$的增加而以$\mathcal{O}(M^{-1/2})$阶的速度降低，与理论收敛速率吻合；在Black-Scholes期权定价中，数值解与PDE经典解析公式对比，相对误差在$10^{-3}$量级。上述结果表明，该概率数值方法适用于复杂几何区域及非光滑边界条件，具有良好的可扩展性与数值稳定性，为PDE的随机化求解提供了一种可并行实现的计算途径。
 \end{abstract}
 
 \begin{abstract*}
-  Stochastic differential equations (SDEs) provide a probabilistic framework for solving deterministic partial differential equations (PDEs), transforming their analytical solutions into problems of stochastic path simulation and statistical estimation. This paper begins with a systematic introduction to the fundamental concepts, including stochastic processes, Brownian motion, Itô integrals, and Itô’s formula. It then presents the core theoretical results, such as the existence and uniqueness of solutions to SDEs, the infinitesimal generator of Itô diffusions, and Dynkin’s formula.
+  Stochastic differential equations (SDEs) provide a probabilistic representation for solving partial differential equations (PDEs), transforming the solution process—particularly numerical solution—into a problem of stochastic path simulation and statistical averaging. Chapter 2 reviews the foundational tools of SDE theory, including preliminary concepts such as Brownian motion, the It\^o integral, and It\^o's formula. It elaborates on core theories, including the existence and uniqueness of SDE solutions, the infinitesimal generator of It\^o diffusions, and Dynkin's formula, laying the theoretical groundwork for establishing the connection between SDEs and PDEs.
   
-  Subsequently, the connection between SDEs and PDEs is established via the Feynman–Kac formula. Based on this theoretical foundation, an efficient numerical framework is developed by combining the Euler–Maruyama time discretization scheme with Monte Carlo simulation. Numerical experiments are conducted on classical Dirichlet problems, the heat equation, and the Black–Scholes equation in financial mathematics.
+  Building upon this, Chapter 3 establishes the probabilistic representation of PDE solutions via the Feynman-Kac formula. By combining the Euler-Maruyama scheme with Monte Carlo simulation, an efficient numerical framework is proposed. Chapters 3 and 4 validate this framework through numerical experiments on three types of problems: Dirichlet problems with various domains, the initial value problem of the heat equation, and the Black-Scholes model for European option pricing in finance.
   
-  The results demonstrate that, for Dirichlet problems on domains such as the unit disk, square, and triangle, as well as for the heat equation, the mean absolute error decreases at a rate of order $\mathcal{O}(M^{-1/2})$ with respect to the number of Monte Carlo sample paths, which is consistent with the theoretical convergence rate. In the context of option pricing under the Black–Scholes model, the proposed method is also capable of accurately approximating risk-neutral prices. These findings confirm that the SDE–Monte Carlo approach exhibits strong scalability and numerical stability in handling high-dimensional problems and complex boundary conditions, providing a practical and effective tool for solving PDEs arising in engineering, physics, and finance.
+  The simulation results demonstrate that the mean absolute errors of the SDE-Monte Carlo method for both the Dirichlet problem and the heat equation decay at a rate of $\mathcal{O}(M^{-1/2})$ as the number of Monte Carlo simulation paths $M$ increases, which is strictly consistent with the theoretical convergence rate. In the Black-Scholes option pricing model, the relative error between the numerical solution and the classical PDE analytical solution is on the order of $10^{-3}$. Overall, these findings indicate that this probabilistic numerical method is well-suited for complex geometric domains and non-smooth boundary conditions. It exhibits excellent scalability and numerical stability, offering a highly parallelizable computational approach for the randomized solution of PDEs.
 \end{abstract*}
 
 \tableofcontents
@@ -121,18 +121,18 @@
 \begin{definition}[$L^p(\mathbb{P})$空间]\label{def:Lp_space}
 	若$X:(\Omega,\mathcal{F},\mathbb{P})\mapsto\mathbb{R}^n$为一定义在概率空间$(\Omega,\mathcal{F},\mathbb{P})$取值为$\mathbb{R}^n$的随机变量，$p\in \left [1,\infty \right )$为一常数，定义$X$的$L^p$范数$\left \Vert X \right \Vert_p$如下
 	\[
-	\left \Vert X \right \Vert_p=\left \Vert X \right \Vert_{L^p(\mathbb{P})}=\bigg(\int_{\Omega} \left \vert X(\omega) \right \vert^p \, d\mathbb{P}(\omega)\bigg)^{\frac{1}{p}}
+	\left \Vert X \right \Vert_p=\left \Vert X \right \Vert_{L^p(\mathbb{P})}=\bigg(\int_{\Omega} \left \vert X(\omega) \right \vert^p \, d\mathbb{P}(\omega)\bigg)^{\frac{1}{p}}\,.
 	\]
 	对应的$L^p(\mathbb{P})$空间定义为
 	\[
-	L^p(\mathbb{P})=\left \{ X:\Omega \to \mathbb{R}^n;\left \Vert X \right \Vert_p<\infty \right \}
+	L^p(\mathbb{P})=\left \{ X:\Omega \to \mathbb{R}^n;\left \Vert X \right \Vert_p<\infty \right \}\,.
 	\]
 \end{definition}
 
 \begin{definition}[随机过程]\label{def:Stochastic_Process}
 	随机过程是一组由参数$t\in\mathcal{T}:=[0,T]$指示的随机变量
 	\[
-	\left \{ X_t(\omega)\right \}_{t\in \mathcal{T}}
+	\left \{ X_t(\omega)\right \}_{t\in \mathcal{T}}\,.
 	\]
 	这些随机变量定义在一概率空间($\Omega$,$\mathcal{F}$,$\mathbb{P}$)，并取值于$\mathbb{R}^n$。
 	若固定$\omega \in \Omega$，函数
@@ -143,7 +143,7 @@
 	随机过程$X=\left\{X_t\right\}_{t\in T}$的（有限维）分布即是定义在$\mathbb{R}^{nk}$上的测度$u_{t_1,\ldots,t_k},$
 	\noindent$k=1,2,\ldots$
 	\[
-	u_{t_1,\ldots,t_k}(F_1\times F_2\times \ldots\times F_k)=\mathbb{P}\left[X_{t_1}\in F_1,\ldots,X_{t_k}\in F_k\right];\hspace{0.3cm}t_i\in T
+	u_{t_1,\ldots,t_k}(F_1\times F_2\times \ldots\times F_k)=\mathbb{P}\left[X_{t_1}\in F_1,\ldots,X_{t_k}\in F_k\right];\hspace{0.3cm}t_i\in T\,,
 	\]
 	其中$F_1,\ldots,F_k$为$\mathbb{R}^n$上的Borel集。
 \end{definition}
@@ -156,12 +156,12 @@
 	\noindent $\forall 0\le t_1\le t_2\le\ldots\le t_k$，定义$\mathbb{R}^{nk}$上一测度$\nu_{t_1, \dots, t_k}$
 	\begin{align*}
 	\quad \nu_{t_1, \dots, t_k} (&F_1 \times \cdots \times F_k) \\
-	&= \int\limits_{F_1 \times \cdots \times F_k}p(t_1,x,x_1)p(t_2-t_1,x_1,x_2)\ldots p(t_k-t_{k-1},x_{k-1},x_{k})dx_1\ldots dx_k
+	&= \int\limits_{F_1 \times \cdots \times F_k}p(t_1,x,x_1)p(t_2-t_1,x_1,x_2)\ldots p(t_k-t_{k-1},x_{k-1},x_{k})dx_1\ldots dx_k\,,
 	\end{align*}
 	其中用记号$dy=dy_1\ldots dy_k$表示Lebesgue测度，并约定$x$处的单位点质量为$p(0,x,y)dy=\delta _x(y)$。
 	易验证该测度满足Kolmogorov扩张定理（详见附录\ref{A}中\textbf{定理}\ref{theo:Kol_expan}）的两个条件，因此存在一概率空间$(\Omega,\mathcal{F},\mathbb{P}^x)$以及一$\Omega$上的随机过程$\left \{ B_t\right \}_{t\ge 0}$，使得$B_t$的有限维分布为
 	\[
-	\mathbb{P}^x(B_{t_1}\in F_1,\ldots,B_{t_k}\in F_k)=\nu_{t_1, \dots, t_k} (F_1 \times \cdots \times F_k)
+	\mathbb{P}^x(B_{t_1}\in F_1,\ldots,B_{t_k}\in F_k)=\nu_{t_1, \dots, t_k} (F_1 \times \cdots \times F_k)\,.
 	\]
 	上述定义的随机过程称为从$x$开始的\textbf{Brownian运动}$(\mathbb{P}^x(B_0=x)=1)$。
 	特别的，当$x=0$时，将$\mathbb{P}^0$简写为$\mathbb{P}$。
